@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sachin Gaikwad - Education</title>
+    <link rel="stylesheet" href="screenstyle.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="shortcut icon" href="https://cdn.glitch.com/4ca7897a-5efb-48d1-a044-47b8763ad055%2Ffavicon.ico?v=1623547297688" type="image/x-icon" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="degrees_final.js"></script>
+  </head>
+
+  <body>
+    <main class="grid">
+      <header class="header">
+        <h1 id="top">Education</h1>
+        <!-- Image source Pexels, free stock photo -->
+      </header>
+
+      <section>
+        <h6>education</h6>
+
+        <input
+          id="getDegreeDetails"
+          type="button"
+          value="Get Degree Details by XMLHttpRequest"
+        />
+        <table class="educationXHR">
+          <tr>
+            <th>Degree</th>
+            <th>Concentration</th>
+            <th>University</th>
+            <th>Year</th>
+            <th>GPA</th>
+            <th>Logo</th>
+          </tr>
+        </table>
+
+        <input
+          id="getDegreeDetailsByFetch"
+          type="button"
+          value="Get Degree Details by Fetch"
+        />
+        <table class="educationFetch">
+          <tr>
+            <th>Degree</th>
+            <th>Concentration</th>
+            <th>University</th>
+            <th>Year</th>
+            <th>GPA</th>
+            <th>Logo</th>
+          </tr>
+        </table>
+      </section>
+
+      <footer class="footer">
+        Sachin Gaikwad © 2021 All Rights Reserved.
+      </footer>
+      <div class="top">
+        <!-- Takes user to top of the page -->
+        <a href="#top"> ^ Top</a>
+      </div>
+    </main>
+  </body>
+</html>
