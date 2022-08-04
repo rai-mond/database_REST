@@ -1,6 +1,5 @@
 
 
-
 $(document).ready(function() {
   $("#getDegreeDetails").click(function() {
     console.log("getDegreeDetails was clicked");
@@ -12,43 +11,34 @@ $(document).ready(function() {
   });
 });
 
-// Fetch request
-function makeFetch() {
-  // https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch
-  let table = $(".educationFetch");
-
-  fetch("data.json")
-    .then(response => {
-      if (!response.ok) {
-        throw new Error("Netork was not OK");
-      } else {
-        return response.json();
-      }
-    })
-    .then(data => {
-      populateTable(data.degrees, table);
-    })
-    .catch(error => {
-      console.error(
-        "There has been a problem with your fetch operation:",
-        error
-      );
-      alert("There has been a problem with your fetch operation:", error);
-    });
-}
 
 //  XMLHttpRequest
 function makeXHRequest() {
+
+  var xhr = new XMLHttpRequest();
+var url = "datab/data2.json";
+xhr.open("POST", url, true);
+xhr.setRequestHeader("Content-Type", "application/json");
+xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4 && xhr.status === 200) {
+        var json = JSON.parse(xhr.responseText);
+        console.log(json.email + ", " + json.password);
+    }
+};
+var data = JSON.stringify({"email": "hey@mail.com", "password": "101010"});
+xhr.send(data);
+
+
+
+ 
+
+
   
-  let httpRequest = new XMLHttpRequest();
-  //httpRequest.withCredentials = true;
-  let json = JSON.stringify({
-    name: "John",
-    surname: "Smith"
-  });
+  //let httpRequest = new XMLHttpRequest();
 
 
-/*
+/*********************/
+  /*
   // validate that httpRequest object was created successfully
   if (!httpRequest) {
     alert("Problem making request, please try again later");
@@ -71,9 +61,27 @@ function makeXHRequest() {
 */
 
 
+  /*
+  // this is how we fire the function above
+  httpRequest.open("GET", "data.json");
+  httpRequest.send();
+  */
+/*****************/
+
+
+
+/********************* */
+/*
+  httpRequest.withCredentials = false;
+  let jsona = JSON.stringify({"name": "John", "surname": "Smith"});
+
+
+
+
     // track upload progress
     httpRequest.upload.onprogress = function(event) {
       console.log(`Uploaded ${event.loaded} of ${event.total}`);
+      
     };
   
     // track completion: both successful or not
@@ -84,17 +92,16 @@ function makeXHRequest() {
         console.log("error " + this.status);
       }
     };
-
-  httpRequest.open('POST', "/data1.json");
+  
+  httpRequest.open('POST', 'datab/data1.json',true);
   httpRequest.setRequestHeader('Content-type', 'application/json; charset=utf-8');
-  httpRequest.send(json);
 
+  
+  httpRequest.send(jsona);
 
-  /*
-  // this is how we fire the function above
-  httpRequest.open("GET", "data.json");
-  httpRequest.send();
-  */
+*/
+
+/********************* */
 }
 
 function populateTable(degreeList, table) {

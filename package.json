@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "axios": "^0.27.2"
+  },
+  "name": "database_rest",
+  "description": "# Features: * HTML page is styled using grid, almost all the elements on the page are stylized using external CSS * Implemented using jquery (for the first time) * Simplified the JSON file structure * Added the University logo and link details with in the table * For the Logo image, alt text is added dynamically * Added Logic to not append the data if multiple times 'Get Degree Details' button is clicked * **_`Note:`_** Implemented both the XMLHttpRequest and Fetch methodologies",
+  "version": "1.0.0",
+  "main": "degrees_final.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rai-mond/database_REST.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rai-mond/database_REST/issues"
+  },
+  "homepage": "https://github.com/rai-mond/database_REST#readme"
+}
